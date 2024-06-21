@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2301C2TempEmbedding", "2301C2TempEmbedding\2301C2TempEmbedding.csproj", "{2C267A42-BA2D-4FD1-BA2F-570E77AF2D11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C267A42-BA2D-4FD1-BA2F-570E77AF2D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C267A42-BA2D-4FD1-BA2F-570E77AF2D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C267A42-BA2D-4FD1-BA2F-570E77AF2D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C267A42-BA2D-4FD1-BA2F-570E77AF2D11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E981F98-3E71-4109-94F5-DF066BD0C52B}
+	EndGlobalSection
+EndGlobal
