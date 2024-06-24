@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\harisnaseer\source\repos\2301C2TempEmbedding\2301C2TempEmbedding
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/harisnaseer/source/repos/2301C2TempEmbedding/2301C2TempEmbedding/Views/Admin/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/harisnaseer/source/repos/2301C2TempEmbedding/2301C2TempEmbedding/Views/Admin/AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/harisnaseer/source/repos/2301C2TempEmbedding/2301C2TempEmbedding/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/harisnaseer/source/repos/2301C2TempEmbedding/2301C2TempEmbedding/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/harisnaseer/source/repos/2301C2TempEmbedding/2301C2TempEmbedding/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/harisnaseer/source/repos/2301C2TempEmbedding/2301C2TempEmbedding/Views/Shared/_Layout1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQxLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/harisnaseer/source/repos/2301C2TempEmbedding/2301C2TempEmbedding/Views/Shared/_ValidationScriptsPartial.cshtml]
