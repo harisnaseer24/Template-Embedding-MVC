@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using _2301C2TempEmbedding.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace _2301C2TempEmbedding.Controllers
 {
@@ -15,6 +16,20 @@ namespace _2301C2TempEmbedding.Controllers
 
         [HttpGet]
         public IActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Add(Product prd)
+        {
+            if (ModelState.IsValid)
+            {
+                return Content("data is all good.");
+            }
+            return View();
+        }
+
+        public IActionResult Login()
         {
             return View();
         }
