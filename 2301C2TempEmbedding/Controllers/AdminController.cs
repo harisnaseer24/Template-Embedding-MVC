@@ -11,6 +11,8 @@ namespace _2301C2TempEmbedding.Controllers
         public IActionResult Index()
         {
             if (HttpContext.Session.GetString("role") == "admin") {
+                ViewBag.email = HttpContext.Session.GetString("adminEmail");
+
                 return View();
             }
             else
@@ -53,10 +55,6 @@ namespace _2301C2TempEmbedding.Controllers
             {
                 HttpContext.Session.SetString("adminEmail", email);
                 HttpContext.Session.SetString("role", "admin");
-
-
-
-                // return RedirectToAction("Index","Home");
                 return RedirectToAction("Index");
             }
             else if (email == "user@gmail.com" && pass == "123")
@@ -69,11 +67,21 @@ namespace _2301C2TempEmbedding.Controllers
             }
             else
             {
-
                 ViewBag.msg = "Invalid Credentials";
                 return View();
             }
            
+        }
+
+
+        public IActionResult LogoutAdmin()
+        {
+            HttpContext.Session.Clear();
+            HttpContext.Session.Remove("role");
+            HttpContext.Session.Remove("adminEmail");
+
+            return RedirectToAction("Login");
+
         }
     }
 }
