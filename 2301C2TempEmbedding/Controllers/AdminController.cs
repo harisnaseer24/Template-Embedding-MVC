@@ -7,19 +7,21 @@ namespace _2301C2TempEmbedding.Controllers
 {
     public class AdminController : Controller
     {
-        
+        [Authorize(Roles ="Admin")]
         public IActionResult Index()
         {
-            if (HttpContext.Session.GetString("role") == "admin") {
-                ViewBag.email = HttpContext.Session.GetString("adminEmail");
+            //if (HttpContext.Session.GetString("role") == "admin") {
+            //    ViewBag.email = HttpContext.Session.GetString("adminEmail");
 
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
-           
+            //    return View();
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Login");
+            //}
+            return View();
+
+
         }
         public IActionResult AddProduct()
         {
@@ -51,26 +53,28 @@ namespace _2301C2TempEmbedding.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Login(string email, string pass)
         {
-            if(email=="admin@gmail.com" && pass == "123")
-            {
-                HttpContext.Session.SetString("adminEmail", email);
-                HttpContext.Session.SetString("role", "admin");
-                return RedirectToAction("Index");
-            }
-            else if (email == "user@gmail.com" && pass == "123")
-            {
-                HttpContext.Session.SetString("userEmail", email);
-                HttpContext.Session.SetString("role", "user");
+            //if(email=="admin@gmail.com" && pass == "123")
+            //{
+            //    HttpContext.Session.SetString("adminEmail", email);
+            //    HttpContext.Session.SetString("role", "admin");
 
-                return RedirectToAction("Index","Home");
+            //    return RedirectToAction("Index");
+            //}
+            //else if (email == "user@gmail.com" && pass == "123")
+            //{
+            //    HttpContext.Session.SetString("userEmail", email);
+            //    HttpContext.Session.SetString("role", "user");
 
-            }
-            else
-            {
-                ViewBag.msg = "Invalid Credentials";
-                return View();
-            }
-           
+            //    return RedirectToAction("Index","Home");
+
+            //}
+            //else
+            //{
+            //    ViewBag.msg = "Invalid Credentials";
+            //    return View();
+            //}
+            return View();
+
         }
 
 
