@@ -1,9 +1,12 @@
+using _2301C2TempEmbedding.Models;
+
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<EcommerceContext>();
 
 
 

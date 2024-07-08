@@ -1,0 +1,6 @@
+//first time command
+
+Scaffold-DbContext "data source=.;initial catalog=food;user id=sa;password=aptech; TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+//command after making changes in database
+Scaffold-DbContext "data source=.;initial catalog=food;user id=sa;password=aptech; TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
