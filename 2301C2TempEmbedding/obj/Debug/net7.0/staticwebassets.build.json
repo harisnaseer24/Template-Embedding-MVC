@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bXxZQmRcRtZ3GgkK3+F0a6cE1ZSvHBWR2PRKwbrjIag=",
+  "Hash": "WGyN/uIvjQkEOezbZ0Ew4ZD+MizqBa7lp3+/eupeZ70=",
   "Source": "2301C2TempEmbedding",
   "BasePath": "_content/2301C2TempEmbedding",
   "Mode": "Default",
@@ -4061,6 +4061,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\source\\repos\\2301C2TempEmbedding\\2301C2TempEmbedding\\wwwroot\\Uploads\\240615120625carousel-2.jpg",
+      "SourceId": "2301C2TempEmbedding",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\source\\repos\\2301C2TempEmbedding\\2301C2TempEmbedding\\wwwroot\\",
+      "BasePath": "_content/2301C2TempEmbedding",
+      "RelativePath": "Uploads/240615120625carousel-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\240615120625carousel-2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\source\\repos\\2301C2TempEmbedding\\2301C2TempEmbedding\\wwwroot\\Uploads\\240815120810icon-1.png",
+      "SourceId": "2301C2TempEmbedding",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\source\\repos\\2301C2TempEmbedding\\2301C2TempEmbedding\\wwwroot\\",
+      "BasePath": "_content/2301C2TempEmbedding",
+      "RelativePath": "Uploads/240815120810icon-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\240815120810icon-1.png"
     }
   ]
 }
