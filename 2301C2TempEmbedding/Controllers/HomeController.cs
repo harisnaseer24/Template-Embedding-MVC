@@ -2,12 +2,19 @@
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 using System.Diagnostics;
 
 namespace _2301C2TempEmbedding.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly EcommerceContext db;
+        public HomeController(EcommerceContext _db)
+        {
+            db = _db;
+        }
 
         [Authorize]
         public IActionResult Index()
@@ -35,7 +42,8 @@ namespace _2301C2TempEmbedding.Controllers
         }  
         public IActionResult Products()
         {
-            return View();
+            var ItemsData = db.Items.Include(a => a.Cat);
+            return View(ItemsData);
         }
 
        

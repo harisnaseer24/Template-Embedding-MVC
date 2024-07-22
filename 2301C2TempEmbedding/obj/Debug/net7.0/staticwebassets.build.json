@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WGyN/uIvjQkEOezbZ0Ew4ZD+MizqBa7lp3+/eupeZ70=",
+  "Hash": "0LfQiNyVoqfpgJiYF6BLXDGTWYMk4gz5gGuQnuRdbk8=",
   "Source": "2301C2TempEmbedding",
   "BasePath": "_content/2301C2TempEmbedding",
   "Mode": "Default",
@@ -4095,6 +4095,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\240815120810icon-1.png"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\source\\repos\\2301C2TempEmbedding\\2301C2TempEmbedding\\wwwroot\\Uploads\\244019114028product-1.jpg",
+      "SourceId": "2301C2TempEmbedding",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\source\\repos\\2301C2TempEmbedding\\2301C2TempEmbedding\\wwwroot\\",
+      "BasePath": "_content/2301C2TempEmbedding",
+      "RelativePath": "Uploads/244019114028product-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\244019114028product-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\source\\repos\\2301C2TempEmbedding\\2301C2TempEmbedding\\wwwroot\\Uploads\\244019114038product-4.jpg",
+      "SourceId": "2301C2TempEmbedding",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\source\\repos\\2301C2TempEmbedding\\2301C2TempEmbedding\\wwwroot\\",
+      "BasePath": "_content/2301C2TempEmbedding",
+      "RelativePath": "Uploads/244019114038product-4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\244019114038product-4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\source\\repos\\2301C2TempEmbedding\\2301C2TempEmbedding\\wwwroot\\Uploads\\244019114049product-7.jpg",
+      "SourceId": "2301C2TempEmbedding",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\source\\repos\\2301C2TempEmbedding\\2301C2TempEmbedding\\wwwroot\\",
+      "BasePath": "_content/2301C2TempEmbedding",
+      "RelativePath": "Uploads/244019114049product-7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\244019114049product-7.jpg"
     }
   ]
 }

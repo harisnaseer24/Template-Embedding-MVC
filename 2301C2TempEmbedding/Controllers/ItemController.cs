@@ -89,5 +89,37 @@ namespace _2301C2TempEmbedding.Controllers
             ViewBag.CatId = new SelectList(db.Categories, "CatId", "CatName");
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var item1 = db.Items.Find(id);
+            ViewBag.CatId = new SelectList(db.Categories, "CatId", "CatName");
+            if(item1 != null)
+            {
+
+            return View(item1);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+
+            }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(Item item)
+        {
+            
+
+                db.Items.Remove(item);
+                db.SaveChanges();
+
+            ViewBag.CatId = new SelectList(db.Categories, "CatId", "CatName");
+            return RedirectToAction("Index");
+        }
+
+
+
     }
 }
