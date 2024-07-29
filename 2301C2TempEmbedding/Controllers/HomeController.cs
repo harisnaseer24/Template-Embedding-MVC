@@ -45,6 +45,22 @@ namespace _2301C2TempEmbedding.Controllers
             var ItemsData = db.Items.Include(a => a.Cat);
             return View(ItemsData);
         }
+        
+        
+        public IActionResult Details(int id)
+        {
+            var ItemsData = db.Items.Include(a => a.Cat);
+            var ItemDetail = ItemsData.FirstOrDefault(b => b.Id == id);
+            if(ItemDetail  != null)
+            {
+
+            return View(ItemDetail);
+            }
+            else
+            {
+                return RedirectToAction("Products");
+            }
+        }
 
        
     }

@@ -3,11 +3,40 @@ using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 
 using Microsoft.AspNetCore.Mvc;
+using _2301C2TempEmbedding.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace _2301C2TempEmbedding.Controllers
 {
     public class AuthController : Controller
     {
+        private readonly EcommerceContext db;
+        public AuthController(EcommerceContext _db)
+        {
+            db = _db;
+        }
+
+        public IActionResult Signup()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Signup(User user)
+        {
+            var CheckExistingUser = db.Users.FirstOrDefault(t => t.Email == user.Email);
+            if(CheckExistingUser != null)
+            {
+                ViewBag.msg = "User Already Exists";
+                return View();
+            }
+
+            var hasher = new PasswordHasher<string>();
+            user.Password = hasher.HashPassword(user.Email, user.Password);
+            db.Users.Add(user);
+            db.SaveChanges();
+            return RedirectToAction("Login");
+        }
         public IActionResult Login()
         {
             return View();
@@ -20,6 +49,7 @@ namespace _2301C2TempEmbedding.Controllers
 
             bool IsAuthenticated = false;
             bool IsAdmin = false;
+
             ClaimsIdentity identity = null;
 
             if (email == "admin@gmail.com" && pass == "123")

@@ -21,22 +21,24 @@ public partial class EcommerceContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public virtual DbSet<User> Users { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("data source=.;initial catalog=ecommerce;user id=sa;password=aptech; TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.CatId).HasName("PK__Categori__6A1C8AFA54688087");
+            entity.HasKey(e => e.CatId).HasName("PK__Categori__6A1C8AFABC30B89A");
 
             entity.Property(e => e.CatName).HasMaxLength(50);
         });
 
         modelBuilder.Entity<Item>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Items__3214EC07A78EE311");
+            entity.HasKey(e => e.Id).HasName("PK__Items__3214EC07F0DED379");
 
             entity.Property(e => e.Image).IsUnicode(false);
             entity.Property(e => e.Name).HasMaxLength(50);
@@ -48,7 +50,7 @@ public partial class EcommerceContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__products__3214EC07301375EF");
+            entity.HasKey(e => e.Id).HasName("PK__products__3214EC07F3538608");
 
             entity.ToTable("products");
 
@@ -57,6 +59,15 @@ public partial class EcommerceContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("pname");
             entity.Property(e => e.Price).HasColumnName("price");
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07C7B1E258");
+
+            entity.Property(e => e.Email).HasMaxLength(100);
+            entity.Property(e => e.RoleId).HasDefaultValueSql("((2))");
+            entity.Property(e => e.Username).HasMaxLength(50);
         });
 
         OnModelCreatingPartial(modelBuilder);
