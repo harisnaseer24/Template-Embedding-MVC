@@ -44,77 +44,74 @@ namespace _2301C2TempEmbedding.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Login(string email, string pass)
+        public IActionResult Login(User user)
         {
 
             bool IsAuthenticated = false;
-            bool IsAdmin = false;
+            string controller = "";
 
             ClaimsIdentity identity = null;
 
-            if (email == "admin@gmail.com" && pass == "123")
+            var checkUser = db.Users.FirstOrDefault(u => u.Email == user.Email);
+            if (checkUser != null)
             {
-                identity = new ClaimsIdentity(new[]
+                var hasher = new PasswordHasher<string>();
+                var verifyPass = hasher.VerifyHashedPassword(checkUser.Email, checkUser.Password, user.Password);
+
+                if (verifyPass == PasswordVerificationResult.Success && checkUser.RoleId == 1)
                 {
-                    new Claim(ClaimTypes.Name ,"Haris"),
+                    identity = new ClaimsIdentity(new[]
+                    {
+                    new Claim(ClaimTypes.Name ,checkUser.Username),
                     new Claim(ClaimTypes.Role ,"Admin"),
                 }
-               , CookieAuthenticationDefaults.AuthenticationScheme);
-                IsAuthenticated = true;
-                IsAdmin = true;
-            }
-            else if (email == "user@gmail.com" && pass == "123")
-            {
-                IsAuthenticated = true;
-                identity = new ClaimsIdentity(new[]
-               {
-                    new Claim(ClaimTypes.Name ,"User1"),
+                   , CookieAuthenticationDefaults.AuthenticationScheme);
+                    IsAuthenticated = true;
+                    controller = "Admin";
+                }
+                else if (verifyPass == PasswordVerificationResult.Success && checkUser.RoleId == 2)
+                {
+                    IsAuthenticated = true;
+                    identity = new ClaimsIdentity(new[]
+                   {
+                    new Claim(ClaimTypes.Name ,checkUser.Username),
                     new Claim(ClaimTypes.Role ,"User"),
                 }
-               , CookieAuthenticationDefaults.AuthenticationScheme);
-            }
-            else
-            {
-                IsAuthenticated = false;
-                ViewBag.msg = "Invalid Credentials";
+                   , CookieAuthenticationDefaults.AuthenticationScheme);
+                    controller = "Home";
+                }
+                else
+                {
+                    IsAuthenticated = false;
+                    ViewBag.msg = "Invalid Credentials";
 
-            }
-            if (IsAuthenticated && IsAdmin)
-            {
-                var principal = new ClaimsPrincipal(identity);
+                }
+                if (IsAuthenticated)
+                {
+                    var principal = new ClaimsPrincipal(identity);
 
-                var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                    var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
-                return RedirectToAction("Index", "Admin");
-            }
-            else if (IsAuthenticated)
-            {
-                var principal = new ClaimsPrincipal(identity);
-
-                var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                IsAuthenticated = false;
-
-            }
-            if (IsAuthenticated)
-            {
-                var principal = new ClaimsPrincipal(identity);
-
-                var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-
-                return RedirectToAction("Index", "Home");
-            }
+                    return RedirectToAction("Index", controller);
+                }
+  
             else
             {
 
                 return View();
             }
+               
+          
 
 
+            }
+            else
+            {
+                ViewBag.msg = "User not found";
+                return View();
+            }
+
+           
         }
         public IActionResult Logout()
         {
