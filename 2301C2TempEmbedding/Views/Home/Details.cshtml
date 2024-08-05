@@ -1,8 +1,13 @@
-﻿@model _2301C2TempEmbedding.Models.Item
+﻿@model _2301C2TempEmbedding.Models.Item;
+@using System.Security.Claims;
 
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var userId = Context.Session.GetInt32("UserId");
+    var cart = ViewBag.Cart as _2301C2TempEmbedding.Models.Cart;
+
+
 }
 
 <!-- Page Header Start -->
@@ -35,15 +40,15 @@
                 <p><i class="fa fa-check text-primary me-3"></i> @Html.DisplayFor(model => model.Cat.CatName)</p>
                 <p><i class="fa fa-check text-primary me-3"></i>Rs.  @Html.DisplayFor(model => model.Price) Only</p>
                 <form asp-action="AddToCart">
-                    <Input type="hidden" name="itemId" value="@Model.Id" />
+
+                    <Input type="hidden" asp-for="@cart.UserId" value="@userId" />
+                    <Input type="hidden" asp-for="@cart.Price" value="@Model.Price" />
+                    <Input type="hidden" asp-for="@cart.ItemId" value="@Model.Id" />
                     <label for="qty">Enter Quantity in Kgs.</label>
-                    <Input type="number" class="" name="qty" required value="1" min="1" max="10" />
+                    <Input type="number" class="" asp-for="@cart.Qty" required value="1" min="1" max="10" />
                    <br>
                     <button class="btn btn-primary rounded-pill py-3 px-5 mt-3 " type="submit">Add to cart</button>
                 </form>
-
-               
-             
             </div>
         </div>
     </div>

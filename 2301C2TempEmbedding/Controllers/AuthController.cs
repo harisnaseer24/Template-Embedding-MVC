@@ -63,6 +63,7 @@ namespace _2301C2TempEmbedding.Controllers
                     identity = new ClaimsIdentity(new[]
                     {
                     new Claim(ClaimTypes.Name ,checkUser.Username),
+                    new Claim(ClaimTypes.Sid ,checkUser.Id.ToString()),
                     new Claim(ClaimTypes.Role ,"Admin"),
                 }
                    , CookieAuthenticationDefaults.AuthenticationScheme);
@@ -75,10 +76,12 @@ namespace _2301C2TempEmbedding.Controllers
                     identity = new ClaimsIdentity(new[]
                    {
                     new Claim(ClaimTypes.Name ,checkUser.Username),
+                      new Claim(ClaimTypes.Sid ,checkUser.Id.ToString()),
                     new Claim(ClaimTypes.Role ,"User"),
                 }
                    , CookieAuthenticationDefaults.AuthenticationScheme);
                     controller = "Home";
+                    HttpContext.Session.SetInt32("UserId",checkUser.Id);
                 }
                 else
                 {
@@ -97,13 +100,10 @@ namespace _2301C2TempEmbedding.Controllers
   
             else
             {
-
-                return View();
+                    ViewBag.msg = "Invalid Credentials";
+                    return View();
             }
                
-          
-
-
             }
             else
             {
